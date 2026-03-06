@@ -45,7 +45,6 @@
             font-family: var(--font-sans);
             color: var(--text-dark);
             background-color: #fdfcf9;
-            /* Updated Background Image */
             background-image: url('https://lh3.googleusercontent.com/d/1Tqc3O3Xic1gbGCn6i6_w8ga_Xm0Cjtl3');
             background-attachment: fixed;
             background-size: cover;
@@ -54,7 +53,7 @@
             overflow-x: hidden;
         }
 
-        /* 1. Landing Page (Circular Design) */
+        /* 1. Landing Page */
         #splash-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -165,7 +164,6 @@
             font-weight: 700;
         }
 
-        /* Glitter Black Logo Style */
         .center-logo-wrap {
             position: relative;
             display: inline-block;
@@ -298,7 +296,6 @@
         .chap-num { font-family: var(--font-classic); font-size: 1.25rem; color: var(--primary-navy); letter-spacing: 2px; display: block; margin-bottom: 10px; font-weight: 700; }
         .chap-quote { font-family: var(--font-serif); font-style: italic; font-size: 1.1rem; color: var(--text-muted); display: block; margin-bottom: 15px; line-height: 1.5;}
         
-        /* Styled Sanskrit Text */
         .sanskrit-text {
             font-family: var(--font-serif);
             font-size: 1.1rem;
@@ -311,6 +308,43 @@
         .event-row { margin: 12px 0; font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--text-dark); }
         .event-time { color: var(--primary-navy); margin-left: 8px; font-weight: 400; font-family: var(--font-sans); font-size: 1.1rem; }
 
+        /* Updated Location Button Styling */
+        .location-btn-pop {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--accent-gold);
+            color: var(--primary-navy) !important;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+            border: 2px solid white;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin: 10px 0 45px 0;
+        }
+        
+        .loc-icon {
+            font-size: 1.8rem; /* Significantly larger icon */
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-5px);}
+            60% {transform: translateY(-3px);}
+        }
+
+        .location-btn-pop:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.6);
+        }
+
         /* 7. Final Ending Content */
         .ending-section { padding: 80px 20px; text-align: center; background: transparent; border-top: 1px solid var(--accent-silver); margin-top: 20px; }
         .swagat-text { font-family: var(--font-script); font-size: 4.5rem; color: var(--primary-navy); margin: 0 0 10px 0; }
@@ -318,9 +352,6 @@
         .presence-note { font-family: var(--font-script); font-size: 2rem; color: var(--primary-navy); margin: 15px 0; }
         .signature { font-family: var(--font-classic); font-weight: 700; margin-top: 40px; letter-spacing: 3px; color: var(--primary-navy); text-transform: uppercase; font-size: 1.25rem; }
 
-        /* Actions & UI */
-        .action-btn { width: 100%; max-width: 300px; padding: 15px 30px; border-radius: 12px; border: 1px solid var(--accent-silver); background: var(--primary-navy); color: white; cursor: pointer; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; transition: 0.4s; }
-        
         #audio-toggle {
             position: fixed; bottom: 30px; right: 30px; width: 55px; height: 55px;
             background: var(--primary-navy); border-radius: 50%; display: flex;
@@ -404,22 +435,25 @@
     <section class="schedule">
         <h2 class="section-title reveal">The Celebrations</h2>
         <div class="timeline">
-            <!-- Day 1 -->
+            <!-- Day 1 (Wednesday) -->
             <div class="day-group">
                 <h3 class="day-header reveal">Wednesday, 29th April <span>Day-1</span></h3>
                 
+                <!-- Chapter 1 -->
                 <div class="chapter-card reveal">
                     <span class="chap-num">Chapter 1: The Divine Start</span>
                     <div class="sanskrit-text">वक्रतुंड महाकाय सूर्यकोटि समप्रभ।<br>निर्विघ्नं कुरुमे देव सर्वकार्येषु सर्वदा॥</div>
                     <div class="event-row">Grah Shanti <span class="event-time">10:30 AM</span></div>
                 </div>
 
+                <!-- Chapter 2 -->
                 <div class="chapter-card reveal">
                     <span class="chap-num">Chapter 2: Golden Promises</span>
                     <span class="chap-quote">"First, we seal it. Then we celebrate it."</span>
                     <div class="event-row">Ring Ceremony <span class="event-time">2:00 PM</span></div>
                 </div>
 
+                <!-- Chapter 3 -->
                 <div class="chapter-card reveal">
                     <span class="chap-num">Chapter 3: Haldi Utsav</span>
                     <span class="chap-quote">"First, the blessings. Then, we celebrate!"</span>
@@ -427,16 +461,20 @@
                     <p style="font-size:1rem; color:var(--text-muted); margin-top:10px; font-style: italic;">Attire: Floral & Flowery (Kindly avoid shades of blue)</p>
                 </div>
 
-                <!-- Day 1 Specific Location -->
-                <div class="reveal" style="text-align:center; margin-top: -10px; margin-bottom: 40px;">
-                    <a href="https://maps.app.goo.gl/yGXLVW2yTehsa6Ud9" target="_blank" class="action-btn" style="display:inline-block; text-decoration:none; background: transparent; border: 1px solid var(--accent-silver); color: var(--text-muted); font-size: 0.8rem; max-width: 250px; padding: 10px 20px;">Day 1 Event Location</a>
+                <!-- Day 1 Pop-out Location Button -->
+                <div class="reveal" style="text-align:center;">
+                    <a href="https://maps.app.goo.gl/yGXLVW2yTehsa6Ud9" target="_blank" class="location-btn-pop">
+                        <span class="loc-icon">📍</span>
+                        <span>Day 1 Event Location</span>
+                    </a>
                 </div>
             </div>
 
-            <!-- Day 2 -->
+            <!-- Day 2 (Thursday) -->
             <div class="day-group">
                 <h3 class="day-header reveal">Thursday, 30th April <span>Day-2</span></h3>
                 
+                <!-- Chapter 4 -->
                 <div class="chapter-card reveal">
                     <span class="chap-num">Chapter 4: The Moment We Become Us</span>
                     <span class="chap-quote">"Jahan aagman bhi Pavitra, aur milan bhi anant ho."</span>
@@ -444,6 +482,7 @@
                     <div class="event-row">Hasth Melap <span class="event-time">12:30 PM</span></div>
                 </div>
 
+                <!-- Chapter 5 -->
                 <div class="chapter-card reveal">
                     <span class="chap-num">Chapter 5: The Dance Towards Destiny</span>
                     <span class="chap-quote">"When two dancers become one story, love becomes the choreography"</span>
@@ -451,9 +490,12 @@
                     <p style="font-size:1rem; color:var(--text-muted); margin-top:15px; line-height: 1.5;">Attire: Shimmer & Glitter<br>With Glitter in our style and love in our hearts, we dance to celebrate.</p>
                 </div>
 
-                <!-- Day 2 Specific Location (Small Version) -->
-                <div class="reveal" style="text-align:center; margin-top: -10px; margin-bottom: 40px;">
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=Casa+Paradise+Resort+Chipad+Gujarat" target="_blank" class="action-btn" style="display:inline-block; text-decoration:none; background: transparent; border: 1px solid var(--accent-silver); color: var(--text-muted); font-size: 0.8rem; max-width: 250px; padding: 10px 20px;">Day 2 Event Location</a>
+                <!-- Day 2 Pop-out Location Button -->
+                <div class="reveal" style="text-align:center;">
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Casa+Paradise+Resort+Chipad+Gujarat" target="_blank" class="location-btn-pop">
+                        <span class="loc-icon">📍</span>
+                        <span>Day 2 Event Location</span>
+                    </a>
                 </div>
             </div>
         </div>
