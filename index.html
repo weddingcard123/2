@@ -308,41 +308,67 @@
         .event-row { margin: 12px 0; font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--text-dark); }
         .event-time { color: var(--primary-navy); margin-left: 8px; font-weight: 400; font-family: var(--font-sans); font-size: 1.1rem; }
 
-        /* Updated Location Button Styling */
-        .location-btn-pop {
+        /* Venue Section Styling */
+        .venue-section { padding: 60px 15px; text-align: center; background: transparent; }
+        .venue-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .venue-segment {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--accent-silver);
+            backdrop-filter: blur(5px);
+        }
+        .venue-day-label {
+            font-family: var(--font-classic);
+            font-weight: 700;
+            color: var(--primary-navy);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .venue-name { font-weight: 700; color: var(--primary-navy); font-size: 1.5rem; margin-bottom: 8px; }
+        .venue-address { color: var(--text-muted); font-size: 1rem; margin-bottom: 25px; line-height: 1.5; min-height: 4.5em; }
+        
+        .action-btn { 
+            width: 100%; 
+            max-width: 220px; 
+            padding: 15px 20px; 
+            border-radius: 12px; 
+            border: 1px solid var(--primary-navy); 
+            background: transparent; 
+            color: var(--primary-navy); 
+            cursor: pointer; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            font-size: 0.85rem; 
+            letter-spacing: 2px; 
+            transition: 0.4s;
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            background: var(--accent-gold);
-            color: var(--primary-navy) !important;
-            padding: 14px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
-            border: 2px solid white;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            margin: 10px 0 45px 0;
+            gap: 8px;
         }
         
-        .loc-icon {
-            font-size: 1.8rem; /* Significantly larger icon */
-            animation: bounce 2s infinite;
+        .action-btn:hover {
+            background: var(--primary-navy);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 31, 63, 0.2);
         }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-5px);}
-            60% {transform: translateY(-3px);}
-        }
-
-        .location-btn-pop:hover {
-            transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.6);
+        
+        .loc-icon-small {
+            font-size: 1.2rem;
         }
 
         /* 7. Final Ending Content */
@@ -372,6 +398,9 @@
             .ganesha-top { width: 100px; }
             .swagat-text { font-size: 3.8rem; }
             .center-logo { width: 220px; }
+            .venue-grid { flex-direction: column; align-items: center; }
+            .venue-segment { width: 100%; min-width: auto; }
+            .venue-address { min-height: auto; }
         }
 
         .reveal { opacity: 0; transform: translateY(20px); transition: 1s ease-out; }
@@ -460,14 +489,6 @@
                     <div class="event-row">Haldi Utsav <span class="event-time">5:30 PM Onwards</span></div>
                     <p style="font-size:1rem; color:var(--text-muted); margin-top:10px; font-style: italic;">Attire: Floral & Flowery (Kindly avoid shades of blue)</p>
                 </div>
-
-                <!-- Day 1 Pop-out Location Button -->
-                <div class="reveal" style="text-align:center;">
-                    <a href="https://maps.app.goo.gl/yGXLVW2yTehsa6Ud9" target="_blank" class="location-btn-pop">
-                        <span class="loc-icon">📍</span>
-                        <span>Day 1 Event Location</span>
-                    </a>
-                </div>
             </div>
 
             <!-- Day 2 (Thursday) -->
@@ -489,14 +510,32 @@
                     <div class="event-row">After party <span class="event-time">7:00 PM Onwards</span></div>
                     <p style="font-size:1rem; color:var(--text-muted); margin-top:15px; line-height: 1.5;">Attire: Shimmer & Glitter<br>With Glitter in our style and love in our hearts, we dance to celebrate.</p>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Day 2 Pop-out Location Button -->
-                <div class="reveal" style="text-align:center;">
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=Casa+Paradise+Resort+Chipad+Gujarat" target="_blank" class="location-btn-pop">
-                        <span class="loc-icon">📍</span>
-                        <span>Day 2 Event Location</span>
-                    </a>
-                </div>
+    <!-- 6. Venue Section (Segmented Style) -->
+    <section class="venue-section">
+        <h2 class="section-title reveal">The Venues</h2>
+        <div class="venue-grid reveal">
+            <!-- Segment 1: Day 1 -->
+            <div class="venue-segment">
+                <span class="venue-day-label">Day 1 - Wednesday</span>
+                <p class="venue-name">Shantam Highland</p>
+                <p class="venue-address">G-502, Shantam highland, tarsali dhanyavi highway, near pushpam resicom, Vadodara 390009</p>
+                <a href="https://maps.app.goo.gl/yGXLVW2yTehsa6Ud9" target="_blank" class="action-btn">
+                    <span class="loc-icon-small">📍</span> Get Directions
+                </a>
+            </div>
+
+            <!-- Segment 2: Day 2 -->
+            <div class="venue-segment">
+                <span class="venue-day-label">Day 2 - Thursday</span>
+                <p class="venue-name">Casa Paradise Resort</p>
+                <p class="venue-address">Chamaplipura Village, Chipad, Gujarat 391760</p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Casa+Paradise+Resort+Chipad+Gujarat" target="_blank" class="action-btn">
+                    <span class="loc-icon-small">📍</span> Get Directions
+                </a>
             </div>
         </div>
     </section>
